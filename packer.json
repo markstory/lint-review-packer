@@ -28,7 +28,7 @@
         "DEBIAN_FRONTEND=noninteractive apt-get update",
         "DEBIAN_FRONTEND=noninteractive apt-get install -y rabbitmq-server",
         "DEBIAN_FRONTEND=noninteractive apt-get install -y python2.7 python-pip libffi-dev",
-        "DEBIAN_FRONTEND=noninteractive apt-get install -y git docker"
+        "DEBIAN_FRONTEND=noninteractive apt-get install -y git"
       ]
     },
     {
@@ -63,6 +63,7 @@
     },
     {
       "type": "shell",
+      "execute_command": "sudo -E sh -e '{{ .Path }}'",
       "script": "./build-docker-images.sh"
     },
     {
